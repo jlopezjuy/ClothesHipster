@@ -1,0 +1,116 @@
+<div>
+    <h2 data-translate="anelclothesApp.medida.home.title">Medidas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="medida.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="anelclothesApp.medida.home.createLabel">
+                        Create new Medida
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="anelclothesApp.medida.contornoBusto">Contorno Busto</span></th>
+                    <th><span data-translate="anelclothesApp.medida.anchoPecho">Ancho Pecho</span></th>
+                    <th><span data-translate="anelclothesApp.medida.altoBusto">Alto Busto</span></th>
+                    <th><span data-translate="anelclothesApp.medida.bajoBusto">Bajo Busto</span></th>
+                    <th><span data-translate="anelclothesApp.medida.alturaPinza">Altura Pinza</span></th>
+                    <th><span data-translate="anelclothesApp.medida.separacionBusto">Separacion Busto</span></th>
+                    <th><span data-translate="anelclothesApp.medida.talleDeltantero">Talle Deltantero</span></th>
+                    <th><span data-translate="anelclothesApp.medida.talleEspalda">Talle Espalda</span></th>
+                    <th><span data-translate="anelclothesApp.medida.largoCorset">Largo Corset</span></th>
+                    <th><span data-translate="anelclothesApp.medida.costado">Costado</span></th>
+                    <th><span data-translate="anelclothesApp.medida.hombro">Hombro</span></th>
+                    <th><span data-translate="anelclothesApp.medida.anchoHombro">Ancho Hombro</span></th>
+                    <th><span data-translate="anelclothesApp.medida.largoManga">Largo Manga</span></th>
+                    <th><span data-translate="anelclothesApp.medida.sisaDelantero">Sisa Delantero</span></th>
+                    <th><span data-translate="anelclothesApp.medida.sisaEspalda">Sisa Espalda</span></th>
+                    <th><span data-translate="anelclothesApp.medida.contornoCintura">Contorno Cintura</span></th>
+                    <th><span data-translate="anelclothesApp.medida.anteCadera">Ante Cadera</span></th>
+                    <th><span data-translate="anelclothesApp.medida.contornoCadera">Contorno Cadera</span></th>
+                    <th><span data-translate="anelclothesApp.medida.posicionCadera">Posicion Cadera</span></th>
+                    <th><span data-translate="anelclothesApp.medida.largoFalda">Largo Falda</span></th>
+                    <th><span data-translate="anelclothesApp.medida.tipoFalda">Tipo Falda</span></th>
+                    <th><span data-translate="anelclothesApp.medida.fechaMedida">Fecha Medida</span></th>
+                    <th><span data-translate="anelclothesApp.medida.anchoEspalda">Ancho Espalda</span></th>
+                    <th><span data-translate="anelclothesApp.medida.anchoManga">Ancho Manga</span></th>
+                    <th><span data-translate="anelclothesApp.medida.tiroPantalon">Tiro Pantalon</span></th>
+                    <th><span data-translate="anelclothesApp.medida.anchoPinzaPantalon">Ancho Pinza Pantalon</span></th>
+                    <th><span data-translate="anelclothesApp.medida.anchoRodillaPantalon">Ancho Rodilla Pantalon</span></th>
+                    <th><span data-translate="anelclothesApp.medida.botaPantalon">Bota Pantalon</span></th>
+                    <th><span data-translate="anelclothesApp.medida.largoPantalon">Largo Pantalon</span></th>
+                    <th><span data-translate="anelclothesApp.medida.cliente">Cliente</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="medida in vm.medidas track by medida.id">
+                    <td><a ui-sref="medida-detail({id:medida.id})">{{medida.id}}</a></td>
+                    <td>{{medida.contornoBusto}}</td>
+                    <td>{{medida.anchoPecho}}</td>
+                    <td>{{medida.altoBusto}}</td>
+                    <td>{{medida.bajoBusto}}</td>
+                    <td>{{medida.alturaPinza}}</td>
+                    <td>{{medida.separacionBusto}}</td>
+                    <td>{{medida.talleDeltantero}}</td>
+                    <td>{{medida.talleEspalda}}</td>
+                    <td>{{medida.largoCorset}}</td>
+                    <td>{{medida.costado}}</td>
+                    <td>{{medida.hombro}}</td>
+                    <td>{{medida.anchoHombro}}</td>
+                    <td>{{medida.largoManga}}</td>
+                    <td>{{medida.sisaDelantero}}</td>
+                    <td>{{medida.sisaEspalda}}</td>
+                    <td>{{medida.contornoCintura}}</td>
+                    <td>{{medida.anteCadera}}</td>
+                    <td>{{medida.contornoCadera}}</td>
+                    <td>{{medida.posicionCadera}}</td>
+                    <td>{{medida.largoFalda}}</td>
+                    <td data-translate="{{'anelclothesApp.TipoFalda.' + medida.tipoFalda}}">{{medida.tipoFalda}}</td>
+                        <td>{{medida.fechaMedida | date:'mediumDate'}}</td>
+                    <td>{{medida.anchoEspalda}}</td>
+                    <td>{{medida.anchoManga}}</td>
+                    <td>{{medida.tiroPantalon}}</td>
+                    <td>{{medida.anchoPinzaPantalon}}</td>
+                    <td>{{medida.anchoRodillaPantalon}}</td>
+                    <td>{{medida.botaPantalon}}</td>
+                    <td>{{medida.largoPantalon}}</td>
+                    <td>
+                        <a ui-sref="cliente-detail({id:medida.cliente.id})">{{medida.cliente.nombre}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="medida-detail({id:medida.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="medida.edit({id:medida.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="medida.delete({id:medida.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

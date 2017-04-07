@@ -1,0 +1,76 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "modelo",
+            "otherEntityName": "modelo",
+            "otherEntityRelationshipName": "cliente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "medida",
+            "otherEntityName": "medida",
+            "otherEntityRelationshipName": "cliente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "encargo",
+            "otherEntityName": "encargo",
+            "otherEntityRelationshipName": "cliente"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "apellido",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "celular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "domicilio",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "colegio",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170407142158",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "pager",
+    "service": "no"
+}

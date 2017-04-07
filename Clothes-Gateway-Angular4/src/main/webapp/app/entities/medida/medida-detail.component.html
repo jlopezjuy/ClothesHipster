@@ -1,0 +1,143 @@
+
+<div *ngIf="medida">
+    <h2><span jhiTranslate="anelclothesappApp.medida.detail.title">Medida</span> {{medida.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="anelclothesappApp.medida.contornoBusto">Contorno Busto</span></dt>
+        <dd>
+            <span>{{medida.contornoBusto}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.anchoPecho">Ancho Pecho</span></dt>
+        <dd>
+            <span>{{medida.anchoPecho}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.altoBusto">Alto Busto</span></dt>
+        <dd>
+            <span>{{medida.altoBusto}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.bajoBusto">Bajo Busto</span></dt>
+        <dd>
+            <span>{{medida.bajoBusto}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.alturaPinza">Altura Pinza</span></dt>
+        <dd>
+            <span>{{medida.alturaPinza}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.separacionBusto">Separacion Busto</span></dt>
+        <dd>
+            <span>{{medida.separacionBusto}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.talleDeltantero">Talle Deltantero</span></dt>
+        <dd>
+            <span>{{medida.talleDeltantero}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.talleEspalda">Talle Espalda</span></dt>
+        <dd>
+            <span>{{medida.talleEspalda}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.largoCorset">Largo Corset</span></dt>
+        <dd>
+            <span>{{medida.largoCorset}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.costado">Costado</span></dt>
+        <dd>
+            <span>{{medida.costado}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.hombro">Hombro</span></dt>
+        <dd>
+            <span>{{medida.hombro}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.anchoHombro">Ancho Hombro</span></dt>
+        <dd>
+            <span>{{medida.anchoHombro}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.largoManga">Largo Manga</span></dt>
+        <dd>
+            <span>{{medida.largoManga}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.sisaDelantero">Sisa Delantero</span></dt>
+        <dd>
+            <span>{{medida.sisaDelantero}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.sisaEspalda">Sisa Espalda</span></dt>
+        <dd>
+            <span>{{medida.sisaEspalda}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.contornoCintura">Contorno Cintura</span></dt>
+        <dd>
+            <span>{{medida.contornoCintura}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.anteCadera">Ante Cadera</span></dt>
+        <dd>
+            <span>{{medida.anteCadera}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.contornoCadera">Contorno Cadera</span></dt>
+        <dd>
+            <span>{{medida.contornoCadera}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.posicionCadera">Posicion Cadera</span></dt>
+        <dd>
+            <span>{{medida.posicionCadera}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.largoFalda">Largo Falda</span></dt>
+        <dd>
+            <span>{{medida.largoFalda}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.tipoFalda">Tipo Falda</span></dt>
+        <dd>
+            <span jhiTranslate="{{'anelclothesappApp.TipoFalda.' + medida.tipoFalda}}">{{medida.tipoFalda}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.fechaMedida">Fecha Medida</span></dt>
+        <dd>
+            <span>{{medida.fechaMedida | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.anchoEspalda">Ancho Espalda</span></dt>
+        <dd>
+            <span>{{medida.anchoEspalda}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.anchoManga">Ancho Manga</span></dt>
+        <dd>
+            <span>{{medida.anchoManga}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.tiroPantalon">Tiro Pantalon</span></dt>
+        <dd>
+            <span>{{medida.tiroPantalon}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.anchoPinzaPantalon">Ancho Pinza Pantalon</span></dt>
+        <dd>
+            <span>{{medida.anchoPinzaPantalon}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.anchoRodillaPantalon">Ancho Rodilla Pantalon</span></dt>
+        <dd>
+            <span>{{medida.anchoRodillaPantalon}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.botaPantalon">Bota Pantalon</span></dt>
+        <dd>
+            <span>{{medida.botaPantalon}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.largoPantalon">Largo Pantalon</span></dt>
+        <dd>
+            <span>{{medida.largoPantalon}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.medida.cliente">Cliente</span></dt>
+        <dd>
+            <div *ngIf="medida.cliente">
+                <a [routerLink]="['/cliente', medida.cliente?.id]">{{medida.cliente?.nombre}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'medida/'+ medida.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,12 @@
+{
+    "anelclothesappApp": {
+        "Estado" : {
+            "null": "",
+            "ENCARGADO": "ENCARGADO",
+            "CORTADO": "CORTADO",
+            "PROBADO": "PROBADO",
+            "ENTREGADO": "ENTREGADO",
+            "CANCELADO": "CANCELADO"
+        }
+    }
+}

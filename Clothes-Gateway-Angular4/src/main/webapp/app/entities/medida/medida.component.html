@@ -1,0 +1,118 @@
+<div>
+    <h2>
+        <span jhiTranslate="anelclothesappApp.medida.home.title">Medidas</span>
+        <button class="btn btn-primary float-right create-medida" [routerLink]="['/', { outlets: { popup: ['medida-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="anelclothesappApp.medida.home.createLabel">
+            Create new Medida
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="medidas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.contornoBusto">Contorno Busto</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.anchoPecho">Ancho Pecho</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.altoBusto">Alto Busto</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.bajoBusto">Bajo Busto</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.alturaPinza">Altura Pinza</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.separacionBusto">Separacion Busto</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.talleDeltantero">Talle Deltantero</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.talleEspalda">Talle Espalda</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.largoCorset">Largo Corset</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.costado">Costado</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.hombro">Hombro</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.anchoHombro">Ancho Hombro</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.largoManga">Largo Manga</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.sisaDelantero">Sisa Delantero</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.sisaEspalda">Sisa Espalda</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.contornoCintura">Contorno Cintura</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.anteCadera">Ante Cadera</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.contornoCadera">Contorno Cadera</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.posicionCadera">Posicion Cadera</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.largoFalda">Largo Falda</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.tipoFalda">Tipo Falda</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.fechaMedida">Fecha Medida</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.anchoEspalda">Ancho Espalda</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.anchoManga">Ancho Manga</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.tiroPantalon">Tiro Pantalon</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.anchoPinzaPantalon">Ancho Pinza Pantalon</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.anchoRodillaPantalon">Ancho Rodilla Pantalon</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.botaPantalon">Bota Pantalon</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.largoPantalon">Largo Pantalon</span></th>
+            <th><span jhiTranslate="anelclothesappApp.medida.cliente">Cliente</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let medida of medidas ;trackBy: trackId">
+                <td><a [routerLink]="['../medida', medida.id ]">{{medida.id}}</a></td>
+                <td>{{medida.contornoBusto}}</td>
+                <td>{{medida.anchoPecho}}</td>
+                <td>{{medida.altoBusto}}</td>
+                <td>{{medida.bajoBusto}}</td>
+                <td>{{medida.alturaPinza}}</td>
+                <td>{{medida.separacionBusto}}</td>
+                <td>{{medida.talleDeltantero}}</td>
+                <td>{{medida.talleEspalda}}</td>
+                <td>{{medida.largoCorset}}</td>
+                <td>{{medida.costado}}</td>
+                <td>{{medida.hombro}}</td>
+                <td>{{medida.anchoHombro}}</td>
+                <td>{{medida.largoManga}}</td>
+                <td>{{medida.sisaDelantero}}</td>
+                <td>{{medida.sisaEspalda}}</td>
+                <td>{{medida.contornoCintura}}</td>
+                <td>{{medida.anteCadera}}</td>
+                <td>{{medida.contornoCadera}}</td>
+                <td>{{medida.posicionCadera}}</td>
+                <td>{{medida.largoFalda}}</td>
+                <td jhiTranslate="{{'anelclothesappApp.TipoFalda.' + medida.tipoFalda}}">{{medida.tipoFalda}}</td>
+                <td>{{medida.fechaMedida | date:'mediumDate'}}</td>
+                <td>{{medida.anchoEspalda}}</td>
+                <td>{{medida.anchoManga}}</td>
+                <td>{{medida.tiroPantalon}}</td>
+                <td>{{medida.anchoPinzaPantalon}}</td>
+                <td>{{medida.anchoRodillaPantalon}}</td>
+                <td>{{medida.botaPantalon}}</td>
+                <td>{{medida.largoPantalon}}</td>
+                <td>
+                    <div *ngIf="medida.cliente">
+                        <a [routerLink]="['../cliente', medida.cliente?.id ]" >{{medida.cliente?.nombre}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../medida', medida.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'medida/'+ medida.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'medida/'+ medida.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

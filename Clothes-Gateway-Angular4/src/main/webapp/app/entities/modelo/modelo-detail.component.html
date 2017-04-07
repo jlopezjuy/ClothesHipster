@@ -1,0 +1,43 @@
+
+<div *ngIf="modelo">
+    <h2><span jhiTranslate="anelclothesappApp.modelo.detail.title">Modelo</span> {{modelo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="anelclothesappApp.modelo.imagen">Imagen</span></dt>
+        <dd>
+            <span>{{modelo.imagen}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.modelo.nombreModelo">Nombre Modelo</span></dt>
+        <dd>
+            <span>{{modelo.nombreModelo}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.modelo.colorVestido">Color Vestido</span></dt>
+        <dd>
+            <span>{{modelo.colorVestido}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.modelo.observacion">Observacion</span></dt>
+        <dd>
+            <span>{{modelo.observacion}}</span>
+        </dd>
+        <dt><span jhiTranslate="anelclothesappApp.modelo.cliente">Cliente</span></dt>
+        <dd>
+            <div *ngIf="modelo.cliente">
+                <a [routerLink]="['/cliente', modelo.cliente?.id]">{{modelo.cliente?.nombre}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'modelo/'+ modelo.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
