@@ -4,6 +4,7 @@ import com.anelsoftware.clothes.AnelapiApp;
 
 import com.anelsoftware.clothes.domain.Medida;
 import com.anelsoftware.clothes.domain.Cliente;
+import com.anelsoftware.clothes.repository.ClienteRepository;
 import com.anelsoftware.clothes.repository.MedidaRepository;
 import com.anelsoftware.clothes.web.rest.errors.ExceptionTranslator;
 
@@ -130,6 +131,9 @@ public class MedidaResourceIntTest {
 
     @Autowired
     private MedidaRepository medidaRepository;
+    
+    @Autowired
+    private ClienteRepository clienteRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -150,7 +154,7 @@ public class MedidaResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        MedidaResource medidaResource = new MedidaResource(medidaRepository);
+        MedidaResource medidaResource = new MedidaResource(medidaRepository, clienteRepository);
         this.restMedidaMockMvc = MockMvcBuilders.standaloneSetup(medidaResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)

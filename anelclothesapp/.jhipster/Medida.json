@@ -131,9 +131,10 @@
             "fieldType": "Double"
         }
     ],
-    "changelogDate": "20170407142200",
+    "changelogDate": "20170407130933",
     "entityTableName": "medida",
     "dto": "no",
     "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "microserviceName": "anelapi"
 }

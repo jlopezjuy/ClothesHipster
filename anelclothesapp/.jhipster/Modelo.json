@@ -39,9 +39,10 @@
             ]
         }
     ],
-    "changelogDate": "20170407142159",
+    "changelogDate": "20170407130932",
     "entityTableName": "modelo",
     "dto": "no",
     "pagination": "pager",
-    "service": "no"
+    "service": "no",
+    "microserviceName": "anelapi"
 }

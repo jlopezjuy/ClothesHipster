@@ -6,9 +6,6 @@
                 "createLabel": "Crear nuevo Pago",
                 "createOrEditLabel": "Crear o editar Pago"
             },
-            "created": "Un nuevo Pago ha sido creado con el identificador {{ param }}",
-            "updated": "Un Pago ha sido actualizado con el identificador {{ param }}",
-            "deleted": "Un Pago ha sido eliminado con el identificador {{ param }}",
             "delete": {
                 "question": "¿Seguro que quiere eliminar Pago {{ id }}?"
             },
@@ -20,6 +17,13 @@
             "detalle": "Detalle",
             "numeroRecibo": "Numero Recibo",
             "encargo": "Encargo"
+        }
+    },
+    "anelapiApp": {
+        "pago" : {
+            "created": "Un nuevo Pago ha sido creado con el identificador {{ param }}",
+            "updated": "Un Pago ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Pago ha sido eliminado con el identificador {{ param }}"
         }
     }
 }

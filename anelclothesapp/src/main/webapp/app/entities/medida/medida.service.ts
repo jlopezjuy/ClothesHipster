@@ -7,7 +7,7 @@ import { DateUtils } from 'ng-jhipster';
 @Injectable()
 export class MedidaService {
 
-    private resourceUrl = 'api/medidas';
+    private resourceUrl = 'anelapi/api/medidas';
 
     constructor(private http: Http, private dateUtils: DateUtils) { }
 

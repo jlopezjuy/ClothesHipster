@@ -8,10 +8,10 @@
             "entities": {
                 "main": "Entidades",
                 "cliente": "Cliente",
-                "modelo": "Modelo",
-                "medida": "Medida",
                 "encargo": "Encargo",
                 "pago": "Pago",
+                "medida": "Medida",
+                "modelo": "Modelo",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

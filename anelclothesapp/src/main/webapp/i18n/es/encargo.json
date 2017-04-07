@@ -6,9 +6,6 @@
                 "createLabel": "Crear nuevo Encargo",
                 "createOrEditLabel": "Crear o editar Encargo"
             },
-            "created": "Un nuevo Encargo ha sido creado con el identificador {{ param }}",
-            "updated": "Un Encargo ha sido actualizado con el identificador {{ param }}",
-            "deleted": "Un Encargo ha sido eliminado con el identificador {{ param }}",
             "delete": {
                 "question": "¿Seguro que quiere eliminar Encargo {{ id }}?"
             },
@@ -23,6 +20,13 @@
             "tipoEncargo": "Tipo Encargo",
             "pago": "Pago",
             "cliente": "Cliente"
+        }
+    },
+    "anelapiApp": {
+        "encargo" : {
+            "created": "Un nuevo Encargo ha sido creado con el identificador {{ param }}",
+            "updated": "Un Encargo ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Encargo ha sido eliminado con el identificador {{ param }}"
         }
     }
 }

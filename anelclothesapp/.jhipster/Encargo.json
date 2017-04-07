@@ -52,9 +52,10 @@
             "fieldValues": "QUINCE,NOVIA,MADRINA,FIESTA,POLICIA"
         }
     ],
-    "changelogDate": "20170407142201",
+    "changelogDate": "20170407130934",
     "entityTableName": "encargo",
     "dto": "no",
     "pagination": "pager",
-    "service": "no"
+    "service": "no",
+    "microserviceName": "anelapi"
 }

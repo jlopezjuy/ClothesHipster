@@ -7,7 +7,7 @@ import { DateUtils } from 'ng-jhipster';
 @Injectable()
 export class EncargoService {
 
-    private resourceUrl = 'api/encargos';
+    private resourceUrl = 'anelapi/api/encargos';
 
     constructor(private http: Http, private dateUtils: DateUtils) { }
 

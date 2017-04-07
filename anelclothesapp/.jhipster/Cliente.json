@@ -68,9 +68,10 @@
             ]
         }
     ],
-    "changelogDate": "20170407142158",
+    "changelogDate": "20170407130931",
     "entityTableName": "cliente",
     "dto": "no",
     "pagination": "pager",
-    "service": "no"
+    "service": "no",
+    "microserviceName": "anelapi"
 }

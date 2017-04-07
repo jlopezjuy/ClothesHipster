@@ -36,9 +36,10 @@
             ]
         }
     ],
-    "changelogDate": "20170407142202",
+    "changelogDate": "20170407130935",
     "entityTableName": "pago",
     "dto": "no",
     "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "microserviceName": "anelapi"
 }

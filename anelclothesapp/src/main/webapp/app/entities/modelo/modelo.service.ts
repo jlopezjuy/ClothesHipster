@@ -6,7 +6,7 @@ import { Modelo } from './modelo.model';
 @Injectable()
 export class ModeloService {
 
-    private resourceUrl = 'api/modelos';
+    private resourceUrl = 'anelapi/api/modelos';
 
     constructor(private http: Http) { }
 

@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.anelsoftware.clothes",
-      "nativeLanguage": "es"
+      "nativeLanguage": "es",
+      "microservicePath": "D:\\Proyectos\\Rest Clothes\\ClothesHipster\\anelapi"
     },
     "jhipsterVersion": "4.2.0",
     "baseName": "anelclothesapp",
@@ -21,7 +22,7 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "b913237f01ef9e7222f9e2908150b4ef5dd4b9c5",
+    "jwtSecretKey": "49101ffe41bb047f58783b13bfa1b8bc9ba2a5d5",
     "clientFramework": "angular2",
     "useSass": false,
     "clientPackageManager": "yarn",

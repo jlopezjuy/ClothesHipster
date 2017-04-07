@@ -1,8 +1,9 @@
 package com.anelsoftware.clothes.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.anelsoftware.clothes.domain.Cliente;
 import com.anelsoftware.clothes.domain.Medida;
-
+import com.anelsoftware.clothes.repository.ClienteRepository;
 import com.anelsoftware.clothes.repository.MedidaRepository;
 import com.anelsoftware.clothes.web.rest.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -29,9 +30,11 @@ public class MedidaResource {
     private static final String ENTITY_NAME = "medida";
         
     private final MedidaRepository medidaRepository;
+    private final ClienteRepository clienteRepository;
 
-    public MedidaResource(MedidaRepository medidaRepository) {
+    public MedidaResource(MedidaRepository medidaRepository, ClienteRepository clienteRepository) {
         this.medidaRepository = medidaRepository;
+        this.clienteRepository = clienteRepository;
     }
 
     /**
@@ -86,6 +89,20 @@ public class MedidaResource {
     public List<Medida> getAllMedidas() {
         log.debug("REST request to get all Medidas");
         List<Medida> medidas = medidaRepository.findAll();
+        return medidas;
+    }
+    
+    /**
+     * GET  /medidas : get all the medidas.
+     *
+     * @return the ResponseEntity with status 200 (OK) and the list of medidas in body
+     */
+    @GetMapping("/medidas/cliente/{id}")
+    @Timed
+    public List<Medida> getAllMedidasCliente(@PathVariable Long id) {
+        log.debug("REST request to get all Medidas");
+        Cliente cliente = clienteRepository.getOne(id);
+        List<Medida> medidas = medidaRepository.findAllByCliente(cliente);
         return medidas;
     }
 

@@ -7,7 +7,7 @@ import { DateUtils } from 'ng-jhipster';
 @Injectable()
 export class PagoService {
 
-    private resourceUrl = 'api/pagos';
+    private resourceUrl = 'anelapi/api/pagos';
 
     constructor(private http: Http, private dateUtils: DateUtils) { }
 

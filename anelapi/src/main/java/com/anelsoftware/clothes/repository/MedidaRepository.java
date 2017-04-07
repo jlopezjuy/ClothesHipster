@@ -1,5 +1,6 @@
 package com.anelsoftware.clothes.repository;
 
+import com.anelsoftware.clothes.domain.Cliente;
 import com.anelsoftware.clothes.domain.Medida;
 
 import org.springframework.data.jpa.repository.*;
@@ -11,5 +12,12 @@ import java.util.List;
  */
 @SuppressWarnings("unused")
 public interface MedidaRepository extends JpaRepository<Medida,Long> {
+	
+	/**
+	 * Metodo para obtener las medidas por cliente seleccionado
+	 * @param cliente
+	 * @return
+	 */
+	List<Medida> findAllByCliente(Cliente cliente);
 
 }

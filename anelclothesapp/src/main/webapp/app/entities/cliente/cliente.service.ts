@@ -6,7 +6,7 @@ import { Cliente } from './cliente.model';
 @Injectable()
 export class ClienteService {
 
-    private resourceUrl = 'api/clientes';
+    private resourceUrl = 'anelapi/api/clientes';
 
     constructor(private http: Http) { }
 
