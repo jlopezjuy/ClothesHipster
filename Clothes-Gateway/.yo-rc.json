@@ -21,7 +21,7 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "b9f6a601f7cd402ae6770b132bf5114d3b65fb79",
+    "jwtSecretKey": "ff7a89e520026e66ffa5ee201db65105cce49ece",
     "clientFramework": "angular1",
     "useSass": false,
     "clientPackageManager": "yarn",
