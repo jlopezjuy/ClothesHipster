@@ -1,0 +1,19 @@
+
+
+
+
+entity Cliente
+
+entity Modelo
+
+entity Medida
+
+entity Encargo
+
+entity Pago
+
+microservice Cliente with anelapi
+microservice Modelo with anelapi
+microservice Medida with anelapi
+microservice Encargo with anelapi
+microservice Pago with anelapi

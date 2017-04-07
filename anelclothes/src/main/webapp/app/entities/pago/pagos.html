@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="anelclothesApp.pago.home.title">Pagos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pago.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="anelclothesApp.pago.home.createLabel">
+                        Create new Pago
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="anelclothesApp.pago.fechaPago">Fecha Pago</span></th>
+                    <th><span data-translate="anelclothesApp.pago.importe">Importe</span></th>
+                    <th><span data-translate="anelclothesApp.pago.detalle">Detalle</span></th>
+                    <th><span data-translate="anelclothesApp.pago.numeroRecibo">Numero Recibo</span></th>
+                    <th><span data-translate="anelclothesApp.pago.encargo">Encargo</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pago in vm.pagos track by pago.id">
+                    <td><a ui-sref="pago-detail({id:pago.id})">{{pago.id}}</a></td>
+                        <td>{{pago.fechaPago | date:'mediumDate'}}</td>
+                    <td>{{pago.importe}}</td>
+                    <td>{{pago.detalle}}</td>
+                    <td>{{pago.numeroRecibo}}</td>
+                    <td>
+                        <a ui-sref="encargo-detail({id:pago.encargo.id})">{{pago.encargo.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pago-detail({id:pago.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pago.edit({id:pago.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pago.delete({id:pago.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

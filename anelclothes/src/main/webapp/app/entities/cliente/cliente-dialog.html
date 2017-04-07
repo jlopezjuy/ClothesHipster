@@ -1,0 +1,104 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myClienteLabel" data-translate="anelclothesApp.cliente.home.createOrEditLabel">Create or edit a Cliente</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.cliente.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.cliente.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="anelclothesApp.cliente.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="vm.cliente.nombre"
+                    required/>
+            <div ng-show="editForm.nombre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="anelclothesApp.cliente.apellido" for="field_apellido">Apellido</label>
+            <input type="text" class="form-control" name="apellido" id="field_apellido"
+                    ng-model="vm.cliente.apellido"
+                    required/>
+            <div ng-show="editForm.apellido.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.apellido.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="anelclothesApp.cliente.celular" for="field_celular">Celular</label>
+            <input type="text" class="form-control" name="celular" id="field_celular"
+                    ng-model="vm.cliente.celular"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="anelclothesApp.cliente.telefono" for="field_telefono">Telefono</label>
+            <input type="text" class="form-control" name="telefono" id="field_telefono"
+                    ng-model="vm.cliente.telefono"
+                    required/>
+            <div ng-show="editForm.telefono.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.telefono.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="anelclothesApp.cliente.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.cliente.email"
+                    required/>
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.email.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="anelclothesApp.cliente.domicilio" for="field_domicilio">Domicilio</label>
+            <input type="text" class="form-control" name="domicilio" id="field_domicilio"
+                    ng-model="vm.cliente.domicilio"
+                    required/>
+            <div ng-show="editForm.domicilio.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.domicilio.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="anelclothesApp.cliente.colegio" for="field_colegio">Colegio</label>
+            <input type="text" class="form-control" name="colegio" id="field_colegio"
+                    ng-model="vm.cliente.colegio"
+                    required/>
+            <div ng-show="editForm.colegio.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.colegio.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
