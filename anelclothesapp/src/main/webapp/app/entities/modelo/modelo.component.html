@@ -28,7 +28,7 @@
             <tbody>
             <tr *ngFor="let modelo of modelos ;trackBy: trackId">
                 <td><a [routerLink]="['../modelo', modelo.id ]">{{modelo.id}}</a></td>
-                <td>{{modelo.imagen}}</td>
+                <td><img class="preview" src="data:image/png;base64,{{modelo.imagen}}" width="100px"/></td>
                 <td>{{modelo.nombreModelo}}</td>
                 <td>{{modelo.colorVestido}}</td>
                 <td>{{modelo.observacion}}</td>
