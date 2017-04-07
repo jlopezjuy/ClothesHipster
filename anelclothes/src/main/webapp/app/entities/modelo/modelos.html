@@ -30,7 +30,7 @@
             <tbody>
                 <tr ng-repeat="modelo in vm.modelos track by modelo.id">
                     <td><a ui-sref="modelo-detail({id:modelo.id})">{{modelo.id}}</a></td>
-                    <td>{{modelo.imagen}}</td>
+                    <td><img data-ng-src="data:image/png;base64,{{modelo.imagen}}" width="100px"/></td>
                     <td>{{modelo.nombreModelo}}</td>
                     <td>{{modelo.colorVestido}}</td>
                     <td>{{modelo.observacion}}</td>
