@@ -7,6 +7,7 @@ import { Modelo } from './modelo.model';
 export class ModeloService {
 
     private resourceUrl = 'anelapi/api/modelos';
+    private resourceUrlCliente = 'anelapi/api/modelos/cliente';
 
     constructor(private http: Http) { }
 
@@ -32,15 +33,18 @@ export class ModeloService {
 
     query(req?: any): Observable<Response> {
         let options = this.createRequestOption(req);
-        return this.http.get(this.resourceUrl, options)
+        return this.http.get(this.resourceUrl, options);
+    }
+
+    queryByCliente(req?: any): Observable<Response> {
+      let options = this.createRequestOption(req);
+      return this.http.get(`${this.resourceUrlCliente}/${req}`, options)
         ;
     }
 
     delete(id: number): Observable<Response> {
         return this.http.delete(`${this.resourceUrl}/${id}`);
     }
-
-
 
     private createRequestOption(req?: any): BaseRequestOptions {
         let options: BaseRequestOptions = new BaseRequestOptions();

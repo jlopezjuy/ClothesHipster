@@ -30,11 +30,9 @@ public class MedidaResource {
     private static final String ENTITY_NAME = "medida";
         
     private final MedidaRepository medidaRepository;
-    private final ClienteRepository clienteRepository;
 
-    public MedidaResource(MedidaRepository medidaRepository, ClienteRepository clienteRepository) {
+    public MedidaResource(MedidaRepository medidaRepository) {
         this.medidaRepository = medidaRepository;
-        this.clienteRepository = clienteRepository;
     }
 
     /**

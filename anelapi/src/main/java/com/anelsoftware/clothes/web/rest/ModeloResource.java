@@ -1,8 +1,9 @@
 package com.anelsoftware.clothes.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.anelsoftware.clothes.domain.Medida;
 import com.anelsoftware.clothes.domain.Modelo;
-
+import com.anelsoftware.clothes.repository.ClienteRepository;
 import com.anelsoftware.clothes.repository.ModeloRepository;
 import com.anelsoftware.clothes.web.rest.util.HeaderUtil;
 import com.anelsoftware.clothes.web.rest.util.PaginationUtil;
@@ -33,7 +34,7 @@ public class ModeloResource {
     private final Logger log = LoggerFactory.getLogger(ModeloResource.class);
 
     private static final String ENTITY_NAME = "modelo";
-        
+
     private final ModeloRepository modeloRepository;
 
     public ModeloResource(ModeloRepository modeloRepository) {
@@ -95,6 +96,22 @@ public class ModeloResource {
         Page<Modelo> page = modeloRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/modelos");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+    /**
+     * GET  /modelos : get all the modelos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of modelos in body
+     */
+    @GetMapping("/modelos/cliente/{id}")
+    @Timed
+    public List<Modelo> getAllModelosCliente(@PathVariable Long id) {
+    	log.debug("REST request to get all Medidas");
+        log.info("ID de cliente:" + id);
+        List<Modelo> medidas = modeloRepository.findAllByClienteId(id);
+        log.info("Cantidad de datos encontrados: "+medidas.size());
+        return medidas;
     }
 
     /**

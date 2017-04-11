@@ -101,7 +101,9 @@
             "edit": "Edit",
             "open": "Open",
             "save": "Save",
-            "view": "View"
+            "view": "View",
+            "medida": "Medida",
+            "modelo": "Modelo"
         },
         "detail": {
             "field": "Field",
@@ -133,5 +135,5 @@
         "emailexists": "Email is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "All rights reserved ©AnelSoftware"
+    "footer": "All rights reserved ï¿½AnelSoftware"
 }

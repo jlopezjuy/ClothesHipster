@@ -131,9 +131,6 @@ public class MedidaResourceIntTest {
 
     @Autowired
     private MedidaRepository medidaRepository;
-    
-    @Autowired
-    private ClienteRepository clienteRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -154,7 +151,7 @@ public class MedidaResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        MedidaResource medidaResource = new MedidaResource(medidaRepository, clienteRepository);
+        MedidaResource medidaResource = new MedidaResource(medidaRepository);
         this.restMedidaMockMvc = MockMvcBuilders.standaloneSetup(medidaResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)

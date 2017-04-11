@@ -10,6 +10,8 @@ import { ClientePopupComponent } from './cliente-dialog.component';
 import { ClienteDeletePopupComponent } from './cliente-delete-dialog.component';
 import { MedidaClienteComponent } from '../medida/medida.cliente.component';
 import { MedidaDetailComponent } from '../medida/medida-detail.component';
+import { ModeloClienteComponent } from '../modelo/modelo.cliente.component';
+import { ModeloDetailComponent } from '../modelo/modelo-detail.component';
 
 import { Principal } from '../../shared';
 
@@ -57,10 +59,25 @@ export const clienteRoute: Routes = [
         pageTitle: 'anelclothesappApp.medida.home.title'
     },
     canActivate: [UserRouteAccessService]
-  },
-  {
+  }, {
     path: 'cliente/medida/detalle/:id',
     component: MedidaDetailComponent,
+    data: {
+        authorities: ['ROLE_USER'],
+        pageTitle: 'anelclothesappApp.medida.home.title'
+    },
+    canActivate: [UserRouteAccessService]
+  }, {
+    path: 'cliente/modelo/:id',
+    component: ModeloClienteComponent,
+    data: {
+        authorities: ['ROLE_USER'],
+        pageTitle: 'anelclothesappApp.medida.home.title'
+    },
+    canActivate: [UserRouteAccessService]
+  }, {
+    path: 'cliente/modelo/detalle/:id',
+    component: ModeloDetailComponent,
     data: {
         authorities: ['ROLE_USER'],
         pageTitle: 'anelclothesappApp.medida.home.title'

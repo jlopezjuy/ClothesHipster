@@ -16,34 +16,36 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="nombre"><span jhiTranslate="anelclothesappApp.cliente.nombre">Nombre</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="apellido"><span jhiTranslate="anelclothesappApp.cliente.apellido">Apellido</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="celular"><span jhiTranslate="anelclothesappApp.cliente.celular">Celular</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="telefono"><span jhiTranslate="anelclothesappApp.cliente.telefono">Telefono</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="email"><span jhiTranslate="anelclothesappApp.cliente.email">Email</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="domicilio"><span jhiTranslate="anelclothesappApp.cliente.domicilio">Domicilio</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="colegio"><span jhiTranslate="anelclothesappApp.cliente.colegio">Colegio</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let cliente of clientes ;trackBy: trackId">
-                <td><a [routerLink]="['../cliente', cliente.id ]">{{cliente.id}}</a></td>
-                <td>{{cliente.nombre}}</td>
+                <td><a [routerLink]="['../cliente', cliente.id ]">{{cliente.nombre}}</a></td>
                 <td>{{cliente.apellido}}</td>
                 <td>{{cliente.celular}}</td>
                 <td>{{cliente.telefono}}</td>
                 <td>{{cliente.email}}</td>
-                <td>{{cliente.domicilio}}</td>
                 <td>{{cliente.colegio}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
                                 [routerLink]="['../cliente/medida', cliente.id ]"
                                 class="btn btn-info btn-sm">
-                            <span class="fa fa-eye"></span>
-                            <span class="hidden-md-down" jhiTranslate="entity.action.view">Medidas</span>
+                            <span class="fa fa-folder-open-o"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.medida">Medidas</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['../cliente/modelo', cliente.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-folder-open-o"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.modelo">Modelos</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['../cliente', cliente.id ]"

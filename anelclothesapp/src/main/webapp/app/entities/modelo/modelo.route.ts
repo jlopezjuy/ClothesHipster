@@ -8,6 +8,7 @@ import { ModeloComponent } from './modelo.component';
 import { ModeloDetailComponent } from './modelo-detail.component';
 import { ModeloPopupComponent } from './modelo-dialog.component';
 import { ModeloDeletePopupComponent } from './modelo-delete-dialog.component';
+import { ModeloClienteComponent } from './modelo.cliente.component';
 
 import { Principal } from '../../shared';
 
@@ -42,6 +43,17 @@ export const modeloRoute: Routes = [
   }, {
     path: 'modelo/:id',
     component: ModeloDetailComponent,
+    data: {
+        authorities: ['ROLE_USER'],
+        pageTitle: 'anelclothesappApp.modelo.home.title'
+    },
+    canActivate: [UserRouteAccessService]
+  }, {
+    path: 'modeloCliente/:id',
+    component: ModeloClienteComponent,
+    resolve: {
+      'pagingParams': ModeloResolvePagingParams
+    },
     data: {
         authorities: ['ROLE_USER'],
         pageTitle: 'anelclothesappApp.modelo.home.title'

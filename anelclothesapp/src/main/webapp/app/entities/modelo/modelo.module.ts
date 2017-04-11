@@ -15,6 +15,7 @@ import {
     modeloRoute,
     modeloPopupRoute,
     ModeloResolvePagingParams,
+    ModeloClienteComponent,
 } from './';
 
 let ENTITY_STATES = [
@@ -34,6 +35,7 @@ let ENTITY_STATES = [
         ModeloDeleteDialogComponent,
         ModeloPopupComponent,
         ModeloDeletePopupComponent,
+        ModeloClienteComponent,
     ],
     entryComponents: [
         ModeloComponent,
