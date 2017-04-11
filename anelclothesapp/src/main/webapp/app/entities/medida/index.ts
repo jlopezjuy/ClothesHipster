@@ -6,3 +6,4 @@ export * from './medida-delete-dialog.component';
 export * from './medida-detail.component';
 export * from './medida.component';
 export * from './medida.route';
+export * from './medida.cliente.component';

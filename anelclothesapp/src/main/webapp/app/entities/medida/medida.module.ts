@@ -14,6 +14,7 @@ import {
     MedidaDeleteDialogComponent,
     medidaRoute,
     medidaPopupRoute,
+    MedidaClienteComponent,
 } from './';
 
 let ENTITY_STATES = [
@@ -33,6 +34,7 @@ let ENTITY_STATES = [
         MedidaDeleteDialogComponent,
         MedidaPopupComponent,
         MedidaDeletePopupComponent,
+        MedidaClienteComponent,
     ],
     entryComponents: [
         MedidaComponent,
@@ -40,6 +42,7 @@ let ENTITY_STATES = [
         MedidaPopupComponent,
         MedidaDeleteDialogComponent,
         MedidaDeletePopupComponent,
+        MedidaClienteComponent,
     ],
     providers: [
         MedidaService,

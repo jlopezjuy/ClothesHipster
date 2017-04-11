@@ -19,5 +19,12 @@ public interface MedidaRepository extends JpaRepository<Medida,Long> {
 	 * @return
 	 */
 	List<Medida> findAllByCliente(Cliente cliente);
+	
+	/**
+	 * Metodo para obtener las medidas por id de cliente seleccionado
+	 * @param cliente
+	 * @return
+	 */
+	List<Medida> findAllByClienteId(Long id);
 
 }

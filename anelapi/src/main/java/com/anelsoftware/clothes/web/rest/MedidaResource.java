@@ -87,13 +87,13 @@ public class MedidaResource {
     @GetMapping("/medidas")
     @Timed
     public List<Medida> getAllMedidas() {
-        log.debug("REST request to get all Medidas");
+        log.info("------------------ REST request to get all Medidas");
         List<Medida> medidas = medidaRepository.findAll();
         return medidas;
     }
     
     /**
-     * GET  /medidas : get all the medidas.
+     * GET  /medidas/medidas : get all the medidas por cliente.
      *
      * @return the ResponseEntity with status 200 (OK) and the list of medidas in body
      */
@@ -101,8 +101,9 @@ public class MedidaResource {
     @Timed
     public List<Medida> getAllMedidasCliente(@PathVariable Long id) {
         log.debug("REST request to get all Medidas");
-        Cliente cliente = clienteRepository.getOne(id);
-        List<Medida> medidas = medidaRepository.findAllByCliente(cliente);
+        log.info("ID de cliente:" + id);
+        List<Medida> medidas = medidaRepository.findAllByClienteId(id);
+        log.info("Cantidad de datos encontrados: "+medidas.size());
         return medidas;
     }
 

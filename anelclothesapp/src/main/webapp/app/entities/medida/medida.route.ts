@@ -8,6 +8,7 @@ import { MedidaComponent } from './medida.component';
 import { MedidaDetailComponent } from './medida-detail.component';
 import { MedidaPopupComponent } from './medida-dialog.component';
 import { MedidaDeletePopupComponent } from './medida-delete-dialog.component';
+import { MedidaClienteComponent } from './medida.cliente.component';
 
 import { Principal } from '../../shared';
 

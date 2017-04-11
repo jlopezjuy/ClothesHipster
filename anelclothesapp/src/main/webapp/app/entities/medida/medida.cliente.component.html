@@ -1,0 +1,59 @@
+<div>
+	<h2>
+		<span>Medidas</span>
+		<!--<button class="btn btn-primary float-right create-medida" [routerLink]="['/', { outlets: { popup: ['medida-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="anelclothesappApp.medida.home.createLabel">
+            Create new Medida
+            </span>
+        </button>-->
+		<button type="submit" (click)="previousState()" class="btn btn-info">
+			<span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+		</button>
+	</h2>
+	<jhi-alert></jhi-alert>
+	<div class="row"></div>
+	<br />
+	<div class="table-responsive" *ngIf="medidasCliente">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th><span jhiTranslate="global.field.id">ID</span></th>
+
+					<th><span jhiTranslate="anelclothesappApp.medida.fechaMedida">Fecha Medida</span></th>
+
+					<th><span jhiTranslate="anelclothesappApp.medida.cliente">Cliente</span></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let medida of medidasCliente ;trackBy: trackId">
+					<td><a [routerLink]="['/medida', medida.id ]">{{medida.id}}</a></td>
+
+					<td>{{medida.fechaMedida | date:'dd/MM/yyyy'}}</td>
+
+					<td>
+						<div *ngIf="medida.cliente">
+							<a [routerLink]="['/cliente', medida.cliente?.id ]">{{medida.cliente?.nombre}}</a>
+						</div>
+					</td>
+					<td class="text-right">
+						<div class="btn-group flex-btn-group-container">
+							<button type="submit" [routerLink]="['/cliente/medida/detalle', medida.id ]" class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+
+							<button type="submit" [routerLink]="['/', { outlets: { popup: 'medida/'+ medida.id + '/edit'} }]" replaceUrl="true" class="btn btn-primary btn-sm">
+								<span class="fa fa-pencil"></span> <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+							</button>
+							<button type="submit" [routerLink]="['/', { outlets: { popup: 'medida/'+ medida.id + '/delete'} }]" replaceUrl="true" class="btn btn-danger btn-sm">
+								<span class="fa fa-remove"></span> <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+							</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -8,6 +8,8 @@ import { ClienteComponent } from './cliente.component';
 import { ClienteDetailComponent } from './cliente-detail.component';
 import { ClientePopupComponent } from './cliente-dialog.component';
 import { ClienteDeletePopupComponent } from './cliente-delete-dialog.component';
+import { MedidaClienteComponent } from '../medida/medida.cliente.component';
+import { MedidaDetailComponent } from '../medida/medida-detail.component';
 
 import { Principal } from '../../shared';
 
@@ -45,6 +47,23 @@ export const clienteRoute: Routes = [
     data: {
         authorities: ['ROLE_USER'],
         pageTitle: 'anelclothesappApp.cliente.home.title'
+    },
+    canActivate: [UserRouteAccessService]
+  }, {
+    path: 'cliente/medida/:id',
+    component: MedidaClienteComponent,
+    data: {
+        authorities: ['ROLE_USER'],
+        pageTitle: 'anelclothesappApp.medida.home.title'
+    },
+    canActivate: [UserRouteAccessService]
+  },
+  {
+    path: 'cliente/medida/detalle/:id',
+    component: MedidaDetailComponent,
+    data: {
+        authorities: ['ROLE_USER'],
+        pageTitle: 'anelclothesappApp.medida.home.title'
     },
     canActivate: [UserRouteAccessService]
   }
