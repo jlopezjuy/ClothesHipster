@@ -1,9 +1,8 @@
 package com.anelsoftware.clothes.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import com.anelsoftware.clothes.domain.Medida;
+import com.anelsoftware.clothes.domain.Cliente;
 import com.anelsoftware.clothes.domain.Modelo;
-import com.anelsoftware.clothes.repository.ClienteRepository;
 import com.anelsoftware.clothes.repository.ModeloRepository;
 import com.anelsoftware.clothes.web.rest.util.HeaderUtil;
 import com.anelsoftware.clothes.web.rest.util.PaginationUtil;
@@ -55,6 +54,30 @@ public class ModeloResource {
         if (modelo.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new modelo cannot already have an ID")).body(null);
         }
+        Modelo result = modeloRepository.save(modelo);
+        return ResponseEntity.created(new URI("/api/modelos/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+            .body(result);
+    }
+    
+    /**
+     * POST  /modelos : Create a new modelo usando el id para buscar el cliente.
+     *
+     * @param modelo the modelo to create
+     * @return the ResponseEntity with status 201 (Created) and with body the new modelo, or with status 400 (Bad Request) if the modelo has already an ID
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping("/modeloCliente")
+    @Timed
+    public ResponseEntity<Modelo> createModeloCliente(@Valid @RequestBody Modelo modelo) throws URISyntaxException {
+        log.debug("1 -REST request to save Modelo : {}", modelo);
+        Modelo cliente = modeloRepository.findOneClienteById(modelo.getId());
+        modelo.setCliente(cliente.getCliente());
+        modelo.setId(null);
+        if (modelo.getId() != null) {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new modelo cannot already have an ID")).body(null);
+        }
+        
         Modelo result = modeloRepository.save(modelo);
         return ResponseEntity.created(new URI("/api/modelos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))

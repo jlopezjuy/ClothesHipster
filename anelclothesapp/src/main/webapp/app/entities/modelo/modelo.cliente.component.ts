@@ -40,6 +40,7 @@ export class ModeloClienteComponent implements OnInit, OnDestroy {
     }
     ngOnInit() {
         this.subscription = this.route.params.subscribe(params => {
+            localStorage.setItem('clienteId', params['id']);
             this.loadAll(params['id']);
         });
         this.principal.identity().then((account) => {

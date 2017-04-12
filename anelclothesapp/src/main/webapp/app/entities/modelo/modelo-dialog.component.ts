@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { Response } from '@angular/http';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EventManager, AlertService, JhiLanguageService, DataUtils } from 'ng-jhipster';
 
@@ -19,7 +18,8 @@ export class ModeloDialogComponent implements OnInit {
     modelo: Modelo;
     authorities: any[];
     isSaving: boolean;
-
+    idCliente: number;
+    private sub: any;
     clientes: Cliente[];
     constructor(
         public activeModal: NgbActiveModal,
@@ -28,7 +28,9 @@ export class ModeloDialogComponent implements OnInit {
         private alertService: AlertService,
         private modeloService: ModeloService,
         private clienteService: ClienteService,
-        private eventManager: EventManager
+        private eventManager: EventManager,
+        private route: ActivatedRoute,
+        private ngZone: NgZone
     ) {
         this.jhiLanguageService.setLocations(['modelo']);
     }
@@ -38,6 +40,8 @@ export class ModeloDialogComponent implements OnInit {
         this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
         this.clienteService.query().subscribe(
             (res: Response) => { this.clientes = res.json(); }, (res: Response) => this.onError(res.json()));
+            console.log('Valor guardado: ' + localStorage.getItem('clienteId'));
+            this.idCliente = +localStorage.getItem('clienteId');
     }
     byteSize(field) {
         return this.dataUtils.byteSize(field);
@@ -70,6 +74,7 @@ export class ModeloDialogComponent implements OnInit {
                 .subscribe((res: Modelo) =>
                     this.onSaveSuccess(res), (res: Response) => this.onSaveError(res));
         } else {
+            this.modelo.id = +localStorage.getItem('clienteId');
             this.modeloService.create(this.modelo)
                 .subscribe((res: Modelo) =>
                     this.onSaveSuccess(res), (res: Response) => this.onSaveError(res));
@@ -80,6 +85,9 @@ export class ModeloDialogComponent implements OnInit {
         this.eventManager.broadcast({ name: 'modeloListModification', content: 'OK'});
         this.isSaving = false;
         this.activeModal.dismiss(result);
+        this.ngZone.run(() => {
+                console.log('Reloading component');
+        });
     }
 
     private onSaveError (error) {

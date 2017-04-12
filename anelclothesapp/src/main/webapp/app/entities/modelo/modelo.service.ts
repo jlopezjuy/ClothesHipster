@@ -7,13 +7,15 @@ import { Modelo } from './modelo.model';
 export class ModeloService {
 
     private resourceUrl = 'anelapi/api/modelos';
+    private resourceUrlSaveCliente = 'anelapi/api/modeloCliente';
     private resourceUrlCliente = 'anelapi/api/modelos/cliente';
 
     constructor(private http: Http) { }
 
     create(modelo: Modelo): Observable<Modelo> {
         let copy: Modelo = Object.assign({}, modelo);
-        return this.http.post(this.resourceUrl, copy).map((res: Response) => {
+        console.log('Entro al metodo create...' + modelo.id);
+        return this.http.post(`${this.resourceUrlSaveCliente}`, copy).map((res: Response) => {
             return res.json();
         });
     }

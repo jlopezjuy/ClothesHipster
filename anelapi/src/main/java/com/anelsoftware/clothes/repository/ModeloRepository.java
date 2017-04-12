@@ -1,6 +1,7 @@
 package com.anelsoftware.clothes.repository;
 
 import com.anelsoftware.clothes.domain.Modelo;
+import com.anelsoftware.clothes.domain.Cliente;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,5 +21,12 @@ public interface ModeloRepository extends JpaRepository<Modelo,Long> {
 	 * @return
 	 */
 	List<Modelo> findAllByClienteId(Long id);
+	
+	/**
+	 * Metodo para buscar un Cliente por el Id
+	 * @param id
+	 * @return
+	 */
+	Modelo findOneClienteById(Long id);
 
 }
