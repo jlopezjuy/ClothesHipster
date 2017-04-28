@@ -5,7 +5,7 @@
       "nativeLanguage": "es",
       "microservicePath": "D:\\Proyectos\\Rest Clothes\\ClothesHipster\\anelapi"
     },
-    "jhipsterVersion": "4.2.0",
+    "jhipsterVersion": "4.3.0",
     "baseName": "anelclothesapp",
     "packageName": "com.anelsoftware.clothes",
     "packageFolder": "com/anelsoftware/clothes",

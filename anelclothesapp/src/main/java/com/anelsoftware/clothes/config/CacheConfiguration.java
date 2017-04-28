@@ -61,6 +61,13 @@ public class CacheConfiguration {
     @Bean
     public HazelcastInstance hazelcastInstance(JHipsterProperties jHipsterProperties) {
         log.debug("Configuring Hazelcast");
+
+        HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("anelclothesapp");
+        if (hazelCastInstance != null) {
+            log.debug("Hazelcast already initialized");
+            return hazelCastInstance;
+        }
+
         Config config = new Config();
         config.setInstanceName("anelclothesapp");
         // The serviceId is by default the application's name, see Spring Boot's eureka.instance.appname property

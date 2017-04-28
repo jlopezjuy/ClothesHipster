@@ -1,7 +1,7 @@
 {
     "home": {
-        "title": "¡Bienvenido, Clothes App!",
-        "subtitle": "Sistema de gestion de Clientes",
+        "title": "¡Bienvenido, Java Hipster!",
+        "subtitle": "Esta es su página de inicio",
         "logged": {
             "message": "Está conectado como \"{{username}}\"."
         },

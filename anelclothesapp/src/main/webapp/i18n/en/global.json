@@ -1,17 +1,12 @@
 {
     "global": {
-        "title": "Clothes App",
+        "title": "Anelclothesapp",
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "menu": {
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
-                "cliente": "Cliente",
-                "encargo": "Encargo",
-                "pago": "Pago",
-                "medida": "Medida",
-                "modelo": "Modelo",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -101,9 +96,7 @@
             "edit": "Edit",
             "open": "Open",
             "save": "Save",
-            "view": "View",
-            "medida": "Medida",
-            "modelo": "Modelo"
+            "view": "View"
         },
         "detail": {
             "field": "Field",
@@ -120,7 +113,7 @@
             "max": "This field cannot be more than {{ max }}.",
             "minbytes": "This field should be at least {{ min }} bytes.",
             "maxbytes": "This field cannot be more than {{ max }} bytes.",
-            "pattern": "This field should follow pattern {{ pattern }}.",
+            "pattern": "This field should follow pattern for {{ pattern }}.",
             "number": "This field should be a number.",
             "datetimelocal": "This field should be a date and time."
         }
@@ -135,5 +128,5 @@
         "emailexists": "Email is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "All rights reserved �AnelSoftware"
+    "footer": "This is your footer"
 }
