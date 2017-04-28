@@ -35,7 +35,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/anelapi?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password: 154122954
+        password:
         hikari:
             data-source-properties:
                 cachePrepStmts: true
