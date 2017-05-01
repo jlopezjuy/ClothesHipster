@@ -14,7 +14,7 @@ import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
     templateUrl: './medida.cliente.component.html'
 })
 export class MedidaClienteComponent implements OnInit, OnDestroy {
-medidasCliente: Medida[];
+medidas: Medida[];
     currentAccount: any;
     eventSubscriber: Subscription;
   private subscription: any;
@@ -33,7 +33,7 @@ medidasCliente: Medida[];
     loadAll(id) {
         this.medidaService.queryByCliente(id).subscribe(
             (res: Response) => {
-                this.medidasCliente = res.json();
+                this.medidas = res.json();
             },
             (res: Response) => this.onError(res.json())
         );
